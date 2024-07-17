@@ -19,6 +19,7 @@ const Carousel: React.FC<CarouselProps> = ({
 }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({loop: true}, [Autoplay(), ClassNames()])
 
+
   const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
     const autoplay = emblaApi?.plugins()?.autoplay
     if (!autoplay) return
