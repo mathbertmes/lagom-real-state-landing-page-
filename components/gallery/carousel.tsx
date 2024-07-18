@@ -5,10 +5,13 @@ import { EmblaOptionsType, EmblaCarouselType } from 'embla-carousel'
 import Image from "next/image";
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
-import { useCallback } from 'react';
+import { MouseEventHandler, useCallback } from 'react';
 import ClassNames from 'embla-carousel-class-names'
 import { DotButton, useDotButton } from './EmblaCarouselDotButton';
 import { NextButton, PrevButton, usePrevNextButtons } from './EmblaCarouselArrowButtons';
+import { useGalleryModal } from '@/hooks/use-modal-gallery';
+import "@/styles/main-carousel.css"
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface CarouselProps{
   images: ImageProps[]
@@ -17,9 +20,23 @@ interface CarouselProps{
 const Carousel: React.FC<CarouselProps> = ({
   images
 }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({loop: true}, [Autoplay(), ClassNames()])
+  const [emblaRef, emblaApi] = useEmblaCarousel({loop: true}, [Autoplay({delay: 3000}), ClassNames()])
+  const useGallery = useGalleryModal()
+
+  const imagesFiltered = [
+    "https://res.cloudinary.com/dzk9pjhvo/image/upload/v1720559631/lagom-gallery/LGA_16_Visual_Pedestre_EF_v2.jpg-name-059e211c136d582b10eebd221fcd03f59478eb42d360fcaf637e0b32602f7f4e_sepqgy.webp",
+    "https://res.cloudinary.com/dzk9pjhvo/image/upload/v1720559640/lagom-gallery/LGA_39_Festas_Condominio_B_EF.jpg-name-2202bd6d3a7835cdbb347ef2378bf4402923c903f41cef17858b28e9eca76206_y25v6s.webp",
+    "https://res.cloudinary.com/dzk9pjhvo/image/upload/v1720559642/lagom-gallery/LGA_44_Fitness_Condominio_B_EF.jpg-name-bc2d0ccb3242c7e6f702934c438fca3ffd04f27dababa4684369a953ef1ad78d_iuuanf.webp",
+    "https://res.cloudinary.com/dzk9pjhvo/image/upload/v1720559629/lagom-gallery/LGA_02_Aerea_02_EF_v2.jpg-name-cbed7af4f011d8a84f6e305ccbffd6531ef7b95a103bb8ce2dec74e30b9e39ed_je05am.webp",
+    "https://res.cloudinary.com/dzk9pjhvo/image/upload/v1720559645/lagom-gallery/LGA_51_Piscina_coberta_condominio_B_EF.jpg-name-73ed8f6aee3f804e2bed9201ded397184c6c6bc542c9fb07c1acdb21aa3257bc_eqpdvh.webp",
+    ""
+  ]
 
 
+  const onPreview = (index: number) => {
+    useGallery.onOpen(index)
+    console.log(`atual index: ${useGallery.index}`)
+  }
   const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
     const autoplay = emblaApi?.plugins()?.autoplay
     if (!autoplay) return
@@ -48,31 +65,29 @@ const Carousel: React.FC<CarouselProps> = ({
     <div className="embla" >
       <div className="embla__viewport" ref={emblaRef}>
       <div className="embla__container">
-      {images.map(({ id, public_id, format}) => (
-        <div key={id} className="embla__slide embla__class-names mt-20">
+      {images.map(({ id, public_id, format}, index) => (
+        <div key={id} className="embla__slide embla__class-names mt-28 cursor-pointer">
         <Image
                 key={id}
+                onClick={() => onPreview(index)}
                 alt="Next.js Conf photo"
                 className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110"
                 style={{ transform: "translate3d(0, 0, 0)" }}
-                src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720/${public_id}.${format}`}
-                width={800}
+                src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_1020/${public_id}.${format}`}
+                width={1020}
                 height={480}
-                sizes="(max-width: 640px) 100vw,
-                  (max-width: 1280px) 50vw,
-                  (max-width: 1536px) 33vw,
-                  25vw"
+                
               />
       </div>
       ))}
       </div>
       </div>
-      <div className="embla__controls">
-        <div className="embla__buttons">
-          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-        </div>
-      </div>
+      <div onClick={onPrevButtonClick} className="bg-black h-[35px] w-[35px] lg:h-[50px] lg:w-[50px] absolute top-[50%] rounded-full flex items-center justify-center opacity-60 cursor-pointer">
+            <ChevronLeft color="white"/>
+          </div>
+          <div onClick={onNextButtonClick} className="bg-black h-[35px] w-[35px] lg:h-[50px] lg:w-[50px]  absolute top-[50%] right-0 rounded-full flex items-center justify-center opacity-60 cursor-pointer">
+            <ChevronRight color="white" />
+          </div>
     </div>
   )
 }

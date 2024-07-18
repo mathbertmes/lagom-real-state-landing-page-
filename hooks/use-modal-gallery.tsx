@@ -10,6 +10,6 @@ interface UseGalleryModal {
 export const useGalleryModal = create<UseGalleryModal>((set) => ({
   isOpen: false,
   index: 0,
-  onOpen: (index: number) => set({ index, isOpen: true }),
+  onOpen: (index: number) => set({ index: index, isOpen: true }),
   onClose: () => set({ isOpen: false }),
 }));
