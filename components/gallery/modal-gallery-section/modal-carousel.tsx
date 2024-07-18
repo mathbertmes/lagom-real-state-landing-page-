@@ -6,9 +6,7 @@ import useEmblaCarousel from "embla-carousel-react"
 import { useCallback, useEffect, useState } from "react"
 import { Thumb } from "./thumb";
 import "./gallery.css"
-import { NextButton, PrevButton } from "../EmblaCarouselArrowButtons";
-import { ArrowArcLeft } from "phosphor-react";
-import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface ModalCarouselProps{
   images: ImageProps[]
