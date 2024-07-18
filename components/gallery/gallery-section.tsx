@@ -1,26 +1,33 @@
 import imagesResult from "@/lib/image-results";
 import Container from "../ui/container";
 import Carousel from "./carousel";
+import { useRouter } from "next/navigation";
+import GalleryHeader from "./gallery-header";
 
 
 const GallerySection = async () => {
 
   const image = await imagesResult()
+  const filtredImages = image.filter(image => parseInt(image.height)  < 2000)
 
   
   return(
     <Container>
       <div className="">
-        <div className="w-[100vw] lg:w-[90vw] mt-10 bg-[#D9D9D9] rounded-3xl lg:py-20 lg:px-20 mx-auto">
-          <div className="flex flex-col lg:flex-row justify-between items-center">
-            <h1 className="text-4xl lg:text-7xl font-bold tracking-tight">
-              Galeria
-            </h1>
-            <button className="bg-gray-800 py-2 px-3 lg:py-4 lg:px-6 text-white rounded-md text-sm lg:text-md">
-              Todas as mídias
-            </button>
+        <div className="w-[100vw] lg:w-[90vw] mt-10 bg-[#D9D9D9] rounded-3xl py-4 px-2 lg:py-20 lg:px-20 mx-auto">
+          <GalleryHeader />
+          <Carousel images={filtredImages}/>
+          <div className="mt-10">
+            <video 
+            className="rounded-lg"
+            width="100%"
+            playsInline
+            loop
+            muted
+            controls={true}
+            
+            src="https://res.cloudinary.com/dzk9pjhvo/video/upload/v1720551413/IMG_5541_1_ovnxj3.mov" ></video>
           </div>
-          <Carousel images={image}/>
         </div>
       </div>
 

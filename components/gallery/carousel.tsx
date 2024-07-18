@@ -23,6 +23,7 @@ const Carousel: React.FC<CarouselProps> = ({
   const [emblaRef, emblaApi] = useEmblaCarousel({loop: true}, [Autoplay({delay: 3000}), ClassNames()])
   const useGallery = useGalleryModal()
 
+
   const imagesFiltered = [
     "https://res.cloudinary.com/dzk9pjhvo/image/upload/v1720559631/lagom-gallery/LGA_16_Visual_Pedestre_EF_v2.jpg-name-059e211c136d582b10eebd221fcd03f59478eb42d360fcaf637e0b32602f7f4e_sepqgy.webp",
     "https://res.cloudinary.com/dzk9pjhvo/image/upload/v1720559640/lagom-gallery/LGA_39_Festas_Condominio_B_EF.jpg-name-2202bd6d3a7835cdbb347ef2378bf4402923c903f41cef17858b28e9eca76206_y25v6s.webp",
@@ -63,29 +64,28 @@ const Carousel: React.FC<CarouselProps> = ({
 
   return(
     <div className="embla" >
-      <div className="embla__viewport" ref={emblaRef}>
+      <div className="embla__viewport mt-10 lg:mt-28" ref={emblaRef}>
       <div className="embla__container">
-      {images.map(({ id, public_id, format}, index) => (
-        <div key={id} className="embla__slide embla__class-names mt-28 cursor-pointer">
+      {images.map(({ id, public_id, format, height}, index) => (
+        <div key={id} className="embla__slide embla__class-names cursor-pointer">
         <Image
                 key={id}
                 onClick={() => onPreview(index)}
                 alt="Next.js Conf photo"
-                className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110"
-                style={{ transform: "translate3d(0, 0, 0)" }}
+                className="transform brightness-90 transition will-change-auto group-hover:brightness-110 mx-auto"
+               
                 src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_1020/${public_id}.${format}`}
                 width={1020}
-                height={480}
-                
+                height={600}
               />
       </div>
       ))}
       </div>
       </div>
-      <div onClick={onPrevButtonClick} className="bg-black h-[35px] w-[35px] lg:h-[50px] lg:w-[50px] absolute top-[50%] rounded-full flex items-center justify-center opacity-60 cursor-pointer">
+      <div onClick={onPrevButtonClick} className="bg-black h-[35px] w-[35px] lg:h-[50px] lg:w-[50px] absolute top-[50%] lg:bottom-0 rounded-full flex items-center justify-center opacity-60 cursor-pointer">
             <ChevronLeft color="white"/>
           </div>
-          <div onClick={onNextButtonClick} className="bg-black h-[35px] w-[35px] lg:h-[50px] lg:w-[50px]  absolute top-[50%] right-0 rounded-full flex items-center justify-center opacity-60 cursor-pointer">
+          <div onClick={onNextButtonClick} className=" bg-black h-[35px] w-[35px] lg:h-[50px] lg:w-[50px]  absolute top-[50%] lg:bottom-0 right-0 rounded-full flex items-center justify-center opacity-60 cursor-pointer">
             <ChevronRight color="white" />
           </div>
     </div>
