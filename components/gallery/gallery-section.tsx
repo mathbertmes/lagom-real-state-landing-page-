@@ -14,10 +14,10 @@ const GallerySection = async () => {
   return(
     <Container>
       <div className="">
-        <div className="w-[100vw] lg:w-[90vw] mt-10 bg-[#D9D9D9] rounded-3xl py-4 px-2 lg:py-20 lg:px-20 mx-auto">
+        <div className="w-[100vw] lg:w-[90vw] mt-10 bg-[#D9D9D9] rounded-3xl pt-4 pb-8 px-2 lg:py-20 lg:px-20 mx-auto">
           <GalleryHeader />
           <Carousel images={filtredImages}/>
-          <div className="mt-10">
+          {/* <div className="mt-10">
             <video 
             className="rounded-lg"
             width="100%"
@@ -27,7 +27,7 @@ const GallerySection = async () => {
             controls={true}
             
             src="https://res.cloudinary.com/dzk9pjhvo/video/upload/v1720551413/IMG_5541_1_ovnxj3.mov" ></video>
-          </div>
+          </div> */}
         </div>
       </div>
 
