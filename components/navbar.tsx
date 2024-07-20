@@ -1,4 +1,4 @@
-import logo from "@/public/logo.webp";
+import logo from "@/public/images/lagom-logo-branca.svg";
 import Link from "next/link";
 
 const Navbar = () => {
