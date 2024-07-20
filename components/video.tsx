@@ -7,7 +7,7 @@ const Video = () => {
       <img 
       src="https://res.cloudinary.com/dzk9pjhvo/image/upload/v1720559628/lagom-gallery/11da9d445c6c0eedbfed57fa0d7f355fea3dff696a607ef64137793ff52def4b.jpg-name-e1287181980ea8789cc089fae76e371a645bd93ede41420fc635f52e9a6d8c0e_m8reuz.webp" 
       alt="Lagom Image" 
-      className="h-[90vh] object-cover"
+      className="h-[90vh]"
       width="100%"
      
       />
