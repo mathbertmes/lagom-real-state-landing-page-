@@ -1,11 +1,11 @@
-import logo from "@/public/images/lagom-logo-branca.svg";
+import logo from "@/public/logo.webp";
 import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <div className="w-full h-[100px] bg-[#D9D9D9]">
-      <div className="flex justify-between items-center py-5 px-3">
-        <img src={logo.src} alt="Logo" className="h-12 w-auto" />
+    <div className="w-full h-[100px] bg-[#f3f0eb]">
+      <div className="max-w-7xl mx-auto flex justify-between items-center py-5 px-3">
+        <img src={logo.src} alt="Logo" className="h-16 w-auto" />
         <nav className="hidden lg:flex lg:gap-5" >
           <Link href="/" className="text-lg">Home</Link>
           <Link href="/galeria" className="text-lg">Galeria</Link>
