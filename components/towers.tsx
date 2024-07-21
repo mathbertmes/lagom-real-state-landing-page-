@@ -3,19 +3,17 @@ import TowersImg from "@/public/images/lagom-condominios.jpg"
 
 const Towers = () => {
   return(
-    <div className="my-10">
-      <div className="mb-5 lg:mb-10 w-ful flex justify-center lg:justify-normal">
-        <h1 className="text-4xl lg:text-7xl font-bold tracking-tight">
-          Condomínios
-        </h1>
-      </div>
-      <Image 
-        src={TowersImg}
-        alt="towers image"
-        className="rounded-lg"
-        width={1920}
+      <div className="mt-14 mb-14 w-full">
+
+      <img 
+      src={TowersImg.src}
+      alt="Lagom Image" 
+      className="lg:h-[90vh] object-cover"
+      width="100%"
+     
       />
-    </div>
+    </div>  
+
   )
 }
 
