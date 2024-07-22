@@ -1,7 +1,6 @@
 import imagesResult from "@/lib/image-results";
 import Container from "../ui/container";
 import Carousel from "./carousel";
-import { useRouter } from "next/navigation";
 import GalleryHeader from "./gallery-header";
 
 

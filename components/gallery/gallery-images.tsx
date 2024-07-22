@@ -1,7 +1,6 @@
 import { ImageProps } from "@/types";
 import Link from "next/link";
 import Image from "next/image";
-import { Divide } from "phosphor-react"
 
 interface GalleryImagesProps{
   images: ImageProps[]
