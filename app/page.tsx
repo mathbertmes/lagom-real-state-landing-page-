@@ -1,3 +1,4 @@
+import ContactMeSection from "@/components/contact-me-section";
 import GallerySection from "@/components/gallery/gallery-section";
 import Navbar from "@/components/navbar";
 import PlantsSection from "@/components/plants/plants-section";
@@ -12,6 +13,7 @@ export default function Home() {
       <GallerySection />
       <Towers />
       <PlantsSection />
+      <ContactMeSection />
     </div>
   );
 }
