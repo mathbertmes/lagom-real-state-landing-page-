@@ -4,11 +4,11 @@ import WhatsappIcon from "@/public/images/2062095_application_chat_communication
 
 const ContactMeSection = () => {
   return(
-    <div>
+    <div className="my-10">
       <div className="w-full flex flex-col lg:flex-row justify-between items-center">
       <div className='border-b-2 border-black lg:border-b-0 mb-3  '>
             <h1 className="text-4xl lg:text-7xl font-bold mb-2 tracking-tight">
-              Plantas
+              Contacte-nos
             </h1>
           </div>
           </div>
