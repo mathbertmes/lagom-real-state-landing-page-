@@ -251,6 +251,7 @@ const PlantsSection = () => {
             condominioMassala.map((planta, index) => (
               index == layout && 
               <Image 
+                key={planta.tipo}
                 src={planta.image}
                 width={800}
                 height={420}
