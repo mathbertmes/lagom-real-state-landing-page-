@@ -121,10 +121,13 @@ const PlantsSection = () => {
   return(
     <Container>
       <div className="max-w-7xl mx-auto h-[100vh]">
-        <div>
-          <h1 className="text-4xl lg:text-7xl font-bold tracking-tight">
-            Plantas
-          </h1>
+        <div className="w-full flex flex-col lg:flex-row justify-between items-center">
+          <div className='border-b-2 border-black lg:border-b-0 mb-3  '>
+            <h1 className="text-4xl lg:text-7xl font-bold mb-2 tracking-tight">
+              Plantas
+            </h1>
+          </div>
+          <p className="max-w-[400px] text-sm">Navegue pelas plantas e imagine-se vivendo em um ambiente que combina sofisticação, inovação e conforto. Descubra o seu novo lar e transforme seus sonhos em realidade.</p>
         </div>
         <div className="flex flex-col lg:flex-row lg:items-center w-full lg:justify-between">
 
@@ -163,7 +166,7 @@ const PlantsSection = () => {
                 <SelectGroup >
                   
                   {condominioMassala.map((planta, index) => (
-                    <SelectItem key={planta.tipo} value={`${index}`}>{planta.tipo}</SelectItem>
+                    <SelectItem key={planta.tipo} value={`${index}`}>{planta.tipo} - {planta.meters}M²</SelectItem>
                   ))}
                     
                 </SelectGroup>
@@ -181,7 +184,7 @@ const PlantsSection = () => {
                 <SelectGroup>
                   
                   {condominioMirra.map((planta, index) => (
-                    <SelectItem key={planta.tipo} value={`${index}`}>{planta.tipo}</SelectItem>
+                    <SelectItem key={planta.tipo} value={`${index}`}>{planta.tipo} - {planta.meters}M²</SelectItem>
                   ))}
                     
                 </SelectGroup>
