@@ -8,7 +8,7 @@ const GalleryHeader = () => {
   return (
     <div className='flex flex-col lg:flex-row justify-between items-center'>
       <div className='border-b-2 border-black lg:border-b-0 mb-3  '>
-        <h1 className='text-4xl lg:text-7xl font-bold tracking-tight mb-2 lg:mb-0'>
+        <h1 className='text-6xl lg:text-7xl font-bold tracking-tight mb-2 lg:mb-0'>
           Galeria
         </h1>
       </div>
