@@ -123,7 +123,7 @@ const PlantsSection = () => {
       <div className="max-w-7xl mx-auto pb-14">
         <div className="w-full flex flex-col lg:flex-row justify-between items-center">
           <div className='border-b-2 border-black lg:border-b-0 mb-3  '>
-            <h1 className="text-4xl lg:text-7xl font-bold mb-2 tracking-tight">
+            <h1 className="text-5xl lg:text-7xl font-bold mb-2 tracking-tight">
               Plantas
             </h1>
           </div>
