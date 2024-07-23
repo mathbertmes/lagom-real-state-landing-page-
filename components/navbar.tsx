@@ -1,13 +1,19 @@
 import logo from "@/public/logo.webp";
+import { Menu } from "lucide-react";
 import Link from "next/link";
 
 const Navbar = () => {
   return (
     <div className="w-full h-[100px] bg-[#f3f0eb]">
       <div className="max-w-7xl mx-auto flex justify-between items-center py-5 px-3">
-        <Link href="/">
-          <img src={logo.src} alt="Logo" className="h-12 lg:h-16 w-auto cursor-pointer" />
-        </Link>
+        <div className="flex items-center">
+          <div className="block lg:hidden">
+            <Menu size={40}/>
+          </div>
+          <Link href="/">
+            <img src={logo.src} alt="Logo" className="h-10 lg:h-16 w-auto cursor-pointer" />
+          </Link>
+        </div>
         <nav className="hidden lg:flex lg:gap-5" >
           <Link href="/" className="text-lg">Home</Link>
           <Link href="/#gallery-section" className="text-lg">Galeria</Link>
