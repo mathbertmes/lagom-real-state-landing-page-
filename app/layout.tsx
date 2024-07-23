@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import { ModalProvider } from "@/providers/modal-provider";
 import imagesResult from "@/lib/image-results";
+import { MenuModalProvider } from "@/providers/menu-modal-provider";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default async function RootLayout({
     <html lang="en">
       <body className={urbanist.className}>
         <ModalProvider images={image}/>
+        <MenuModalProvider />
         <Navbar />
         {children}
       </body>
