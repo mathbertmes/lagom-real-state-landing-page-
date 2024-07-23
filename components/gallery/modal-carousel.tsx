@@ -16,7 +16,6 @@ interface ModalCarouselProps{
 const ModalCarousel:React.FC<ModalCarouselProps> = ({
   images
 }) => {
-  console.log(images)
   const galleryModal = useGalleryModal()
 
   const [selectedIndex, setSelectedIndex] = useState(galleryModal.index)
