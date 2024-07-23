@@ -14,7 +14,7 @@ const GallerySection = async () => {
   return(
     <Container>
       <div className="mb-14">
-        <div className="w-[100vw] lg:max-w-7xl mt-10 bg-[#f3f0eb] rounded-3xl pt-4 pb-8 px-2 lg:py-20 lg:px-10 mx-auto ">
+        <div id="gallery-section" className="w-[100vw] lg:max-w-7xl mt-10 bg-[#f3f0eb] rounded-3xl pt-4 pb-8 px-2 lg:py-20 lg:px-10 mx-auto ">
           <GalleryHeader />
           <Carousel images={filtredImages}/>
           <div className="flex justify-center mt-14">
