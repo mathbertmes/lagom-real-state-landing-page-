@@ -8,10 +8,10 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex justify-between items-center py-5 px-3">
         <div className="flex items-center">
           <div className="block lg:hidden">
-            <Menu size={40}/>
+            <Menu size={48} color="#1F2937"/>
           </div>
           <Link href="/">
-            <img src={logo.src} alt="Logo" className="h-10 lg:h-16 w-auto cursor-pointer" />
+            <img src={logo.src} alt="Logo" className="h-12 lg:h-16 w-auto cursor-pointer" />
           </Link>
         </div>
         <nav className="hidden lg:flex lg:gap-5" >
