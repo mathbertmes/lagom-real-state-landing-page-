@@ -2,6 +2,7 @@ import imagesResult, { imagesMainResult } from "@/lib/image-results";
 import Container from "../ui/container";
 import Carousel from "./carousel";
 import GalleryHeader from "./gallery-header";
+import ThumbVideo from "@/public/thumbVideo.png"
 
 
 const GallerySection = async () => {
@@ -23,6 +24,7 @@ const GallerySection = async () => {
          
           controls={true}
           className="max-w-7xl rounded-md lg:rounded-[22px]"
+          poster={ThumbVideo.src}
           src="https://res.cloudinary.com/dzk9pjhvo/video/upload/v1720551413/IMG_5541_1_ovnxj3.mov" ></video> 
           </div>
     
