@@ -22,7 +22,7 @@ const LocationSection: React.FC<LocationProps> = ({
   apiKey,
   mapId
 }) => {
-  console.log("api key: " + process.env.GOOGLE_MAPS_API_KEY)
+
   return(
     <div className="max-w-7xl mx-auto pb-14">
       <div className="w-full flex flex-col lg:flex-row justify-between items-center">
@@ -32,7 +32,7 @@ const LocationSection: React.FC<LocationProps> = ({
             </h1>
           </div>
           <p className="max-w-[400px] text-sm px-4 lg:px-0">
-         Utilize o formulário de contato abaixo para nos enviar suas informações e entraremos em contato, ou se preferir, entre em contato diretamente pelo WhatsApp.
+          O Lagom está localizado nos arredores da Lagoa do Perequê, no coração de Porto Belo. Cercado por uma extensa e exuberante paisagem, oferece um verdadeiro convite à contemplação da natureza e ao bem-estar.
           </p>
         </div>
         <div className='w-full px-4 mt-8'>
