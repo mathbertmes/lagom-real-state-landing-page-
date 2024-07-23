@@ -12,9 +12,12 @@ const Navbar = () => {
           <Link href="#layouts-section" className="text-lg">Plantas</Link>
         </nav>
         <div>
-          <button className="bg-gray-800 py-2 px-4 lg:py-4 lg:px-8 text-white rounded-md lg:text-md">
-            Contacte-nos
-          </button>
+          <Link href="#contact-section">
+            <button className="bg-gray-800 py-2 px-4 lg:py-4 lg:px-8 text-white rounded-md lg:text-md">
+              Contacte-nos
+            </button>
+          </Link>
+          
         </div>
       </div>
     </div>
