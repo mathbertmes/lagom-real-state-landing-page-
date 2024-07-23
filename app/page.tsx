@@ -1,4 +1,5 @@
 
+import ContactMeSection from "@/components/contact-section";
 import GallerySection from "@/components/gallery/gallery-section";
 import PlantsSection from "@/components/plants/plants-section";
 import Towers from "@/components/towers";
@@ -10,8 +11,8 @@ export default function Home() {
     <div>
       <Video />
       <GallerySection />
-      <Towers />
       <PlantsSection />
+      <ContactMeSection />
     </div>
   );
 }

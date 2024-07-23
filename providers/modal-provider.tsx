@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import ModalCarousel from "@/components/gallery/modal-gallery-section/modal-carousel"
+import ModalCarousel from "@/components/gallery/modal-carousel"
 import { ImageProps } from "@/types"
 
 interface ModalProviderProps{
