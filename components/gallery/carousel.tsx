@@ -11,6 +11,7 @@ import { usePrevNextButtons } from './EmblaCarouselArrowButtons';
 import { useGalleryModal } from '@/hooks/use-modal-gallery';
 import "@/styles/main-carousel.css"
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { DotButton, useDotButton } from './EmblaCarouselDotButton'
 
 interface CarouselProps{
   images: ImageProps[]
@@ -20,6 +21,8 @@ const Carousel: React.FC<CarouselProps> = ({
   images
 }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({loop: true}, [Autoplay({delay: 3000}), ClassNames()])
+  const { selectedIndex, scrollSnaps, onDotButtonClick } =
+    useDotButton(emblaApi)
   const useGallery = useGalleryModal()
 
 
@@ -53,15 +56,30 @@ const Carousel: React.FC<CarouselProps> = ({
                 key={id}
                 onClick={() => onPreview(index)}
                 alt="Next.js Conf photo"
-                className="transform brightness-90 transition will-change-auto group-hover:brightness-110 mx-auto"
+                className="transform brightness-90 transition rounded-md lg:rounded-[22px] will-change-auto group-hover:brightness-110 mx-auto h-[200px] lg:h-[400px]"
                
                 src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_1020/${public_id}.${format}`}
                 width={1020}
-                height={600}
+                height={400}
               />
       </div>
       ))}
       </div>
+      </div>
+      <div className="embla__controls">
+        
+
+        <div className="embla__dots">
+          {scrollSnaps.map((_, index) => (
+            <DotButton
+              key={index}
+              onClick={() => onDotButtonClick(index)}
+              className={'embla__dot'.concat(
+                index === selectedIndex ? ' embla__dot--selected' : ''
+              )}
+            />
+          ))}
+        </div>
       </div>
       <div onClick={onPrevButtonClick} className="bg-black h-[35px] w-[35px] lg:h-[50px] lg:w-[50px] absolute top-[50%] lg:bottom-0 rounded-full flex items-center justify-center opacity-60 cursor-pointer">
             <ChevronLeft color="white"/>
