@@ -19,13 +19,13 @@ const ContactMeSection = () => {
         <div className='w-full lg:w-auto px-4 lg:px-0'>
         <div className='flex flex-col gap-5'>
           <div className="flex flex-col lg:flex-row gap-5">
-            <Input className="w-full lg:w-[300px] p-5" placeholder="Nome"/>
-            <Input className="w-full lg:w-[300px] p-5" placeholder="Email"/>
+            <Input className="w-full lg:w-[300px] p-5 text-[16px]" placeholder="Nome"/>
+            <Input className="w-full lg:w-[300px] p-5 text-[16px]" placeholder="Email"/>
           </div>
           <div className="flex flex-col lg:flex-row gap-5">
-            <Textarea className="w-full lg:w-[300px]" placeholder="Mensagem"/>
+            <Textarea className="w-full lg:w-[300px] text-[16px]" placeholder="Mensagem"/>
             <div className="flex w-full lg:w-[300px] flex-col gap-5">
-              <Input className="w-full p-5" placeholder="Numero"/>
+              <Input className="w-full p-5 text-[16px]" placeholder="Numero"/>
               <button className="rounded-md p-2 w-full bg-[#ece5dd] font-semibold">Enviar</button>
             </div>
           </div>
