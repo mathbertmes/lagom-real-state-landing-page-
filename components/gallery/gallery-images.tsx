@@ -26,7 +26,7 @@ const GalleryImages: React.FC<GalleryImagesProps> = ({
 
     {images.map(({ id, public_id, format, blurDataUrl }, index) => (
       <div
-        
+        key={index}
         className="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
       >
         <Image
