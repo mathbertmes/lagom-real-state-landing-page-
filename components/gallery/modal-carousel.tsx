@@ -82,6 +82,7 @@ const ModalCarousel:React.FC<ModalCarouselProps> = ({
           {images.map((image, index) => (
             <div className="embla__slide_modal" key={index}>
               <Image
+              key={index}
               className="transform brightness-110 transition"
               style={{ transform: "translate3d(0, 0, 0)" }}
                   src={`https://res.cloudinary.com/${
