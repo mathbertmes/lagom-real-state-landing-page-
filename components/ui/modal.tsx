@@ -33,10 +33,6 @@ const Modal: React.FC<ModalProps> = ({
               leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel className="w-full max-w-full flex justify-end overflow-hidden rounded-lg text-left align-middle">
-                
-                  <div className="absolute left-4 top-4">
-                    <IconButton onClick={onClose} icon={<X size={15}/>}/>
-                  </div>
                   {children}
                 
               </Dialog.Panel>

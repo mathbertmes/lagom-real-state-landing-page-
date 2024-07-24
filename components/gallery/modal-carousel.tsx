@@ -6,7 +6,8 @@ import useEmblaCarousel from "embla-carousel-react"
 import { useCallback, useEffect, useState } from "react"
 import { Thumb } from "./thumb";
 import "./gallery.css"
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import IconButton from "../ui/icon-button";
 
 interface ModalCarouselProps{
   images: ImageProps[]
@@ -76,6 +77,9 @@ const ModalCarousel:React.FC<ModalCarouselProps> = ({
       open={galleryModal.isOpen}
       onClose={galleryModal.onClose}
     >
+      <div className="absolute left-4 top-4">
+                    <IconButton onClick={() => galleryModal.onClose()} icon={<X size={15}/>}/>
+                  </div>
       <div className="embla_modal">
       <div className="embla__viewport_modal" ref={emblaMainRef}>
         <div className="embla__container_modal">
