@@ -89,6 +89,19 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  max-height: 100px;
+}
+
+@media (max-width: 768px) {
+  .embla-thumbs__slide__number_modal{
+    max-height: 100px;
+  }
+
+  .embla-thumbs__slide_modal {
+    flex: 0 0 33%;
+    min-width: 0;
+    padding-left: var(--thumbs-slide-spacing);
+  }
 }
 .embla-thumbs__slide_modal--selected .embla-thumbs__slide__number_modal {
   color: var(--text-body);
