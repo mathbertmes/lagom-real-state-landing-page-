@@ -14,6 +14,7 @@ export const Thumb: React.FC<PropType> = (props) => {
 
   return (
     <div
+    key={index}
       className={'embla-thumbs__slide_modal'.concat(
         selected ? ' embla-thumbs__slide_modal--selected' : ''
       )}
@@ -32,6 +33,7 @@ export const Thumb: React.FC<PropType> = (props) => {
                   width={180}
                   height={120}
                   priority
+                  key={index}
                   alt="Next.js Conf image"
                  
                 />
