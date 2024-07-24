@@ -8,7 +8,6 @@ import Autoplay from 'embla-carousel-autoplay'
 import { useCallback } from 'react';
 import ClassNames from 'embla-carousel-class-names'
 import { usePrevNextButtons } from './EmblaCarouselArrowButtons';
-import { useGalleryModal } from '@/hooks/use-modal-gallery';
 import "@/styles/main-carousel.css"
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { DotButton, useDotButton } from './EmblaCarouselDotButton'
@@ -23,12 +22,10 @@ const Carousel: React.FC<CarouselProps> = ({
   const [emblaRef, emblaApi] = useEmblaCarousel({loop: true}, [Autoplay({delay: 3000}), ClassNames()])
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi)
-  const useGallery = useGalleryModal()
 
 
-  const onPreview = (index: number) => {
-    useGallery.onOpen(index)
-  }
+
+
   const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
     const autoplay = emblaApi?.plugins()?.autoplay
     if (!autoplay) return
@@ -54,7 +51,6 @@ const Carousel: React.FC<CarouselProps> = ({
         <div key={id} className="embla__slide embla__class-names cursor-pointer">
         <Image
                 key={id}
-                onClick={() => onPreview(index)}
                 alt="Next.js Conf photo"
                 className="transform brightness-90 transition rounded-md lg:rounded-[22px] will-change-auto group-hover:brightness-110 mx-auto h-[200px] lg:h-[400px]"
                
