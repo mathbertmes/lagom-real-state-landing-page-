@@ -1,6 +1,9 @@
+"use client"
+
 import { ImageProps } from "@/types";
 import Link from "next/link";
 import Image from "next/image";
+import { useGalleryModal } from "@/hooks/use-modal-gallery";
 
 interface GalleryImagesProps{
   images: ImageProps[]
@@ -10,19 +13,24 @@ interface GalleryImagesProps{
 const GalleryImages: React.FC<GalleryImagesProps> = ({
   images
 }) => {
+
+  const useGallery = useGalleryModal()
+  
+  const onPreview = (index: number) => {
+    useGallery.onOpen(index)
+  }
+
   return(
     <main className="mx-auto max-w-[1960px] p-4">
     <div className="columns-1 gap-4 sm:columns-2 xl:columns-3 2xl:columns-4">
 
-    {images.map(({ id, public_id, format, blurDataUrl }) => (
-      <Link
-        key={id}
-        href={`/?photoId=${id}`}
-        as={`/p/${id}`}
-        shallow
+    {images.map(({ id, public_id, format, blurDataUrl }, index) => (
+      <div
+        
         className="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
       >
         <Image
+        onClick={() => onPreview(index)}
           alt="Next.js Conf photo"
           className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110"
           style={{ transform: "translate3d(0, 0, 0)" }}
@@ -34,7 +42,7 @@ const GalleryImages: React.FC<GalleryImagesProps> = ({
             (max-width: 1536px) 33vw,
             25vw"
         />
-      </Link>
+      </div>
     ))}
   </div>
   </main>
