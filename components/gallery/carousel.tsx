@@ -77,10 +77,10 @@ const Carousel: React.FC<CarouselProps> = ({
           ))}
         </div>
       </div>
-      <div onClick={onPrevButtonClick} className="bg-black h-[35px] w-[35px] lg:h-[50px] lg:w-[50px] absolute top-[50%] lg:bottom-0 rounded-full flex items-center justify-center opacity-60 cursor-pointer">
+      <div onClick={onPrevButtonClick} className="hidden lg:flex bg-black h-[35px] w-[35px] lg:h-[50px] lg:w-[50px] absolute top-[50%] lg:bottom-0 rounded-full items-center justify-center opacity-60 cursor-pointer">
             <ChevronLeft color="white"/>
           </div>
-          <div onClick={onNextButtonClick} className=" bg-black h-[35px] w-[35px] lg:h-[50px] lg:w-[50px]  absolute top-[50%] lg:bottom-0 right-0 rounded-full flex items-center justify-center opacity-60 cursor-pointer">
+          <div onClick={onNextButtonClick} className="hidden lg:flex  bg-black h-[35px] w-[35px] lg:h-[50px] lg:w-[50px]  absolute top-[50%] lg:bottom-0 right-0 rounded-full items-center justify-center opacity-60 cursor-pointer">
             <ChevronRight color="white" />
           </div>
     </div>

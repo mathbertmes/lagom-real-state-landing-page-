@@ -88,7 +88,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: var(--thumbs-slide-height);
   width: 100%;
 }
 .embla-thumbs__slide_modal--selected .embla-thumbs__slide__number_modal {

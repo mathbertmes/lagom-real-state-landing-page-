@@ -98,10 +98,10 @@ const ModalCarousel:React.FC<ModalCarouselProps> = ({
             </div>
           ))}
         </div>
-          <div onClick={handlePreviewImage} className="bg-black h-[35px] w-[35px] lg:h-[50px] lg:w-[50px] absolute top-[50%] rounded-full flex items-center justify-center opacity-60 cursor-pointer">
+          <div onClick={handlePreviewImage} className="bg-black h-[35px] w-[35px] lg:h-[50px] lg:w-[50px] absolute top-[50%] rounded-full hidden lg:flex items-center justify-center opacity-60 cursor-pointer">
             <ChevronLeft color="white"/>
           </div>
-          <div onClick={handleNextImage} className="bg-black h-[35px] w-[35px] lg:h-[50px] lg:w-[50px]  absolute top-[50%] right-0 rounded-full flex items-center justify-center opacity-60 cursor-pointer">
+          <div onClick={handleNextImage} className="bg-black h-[35px] w-[35px] lg:h-[50px] lg:w-[50px]  absolute top-[50%] right-0 rounded-full hidden lg:flex items-center justify-center opacity-60 cursor-pointer">
             <ChevronRight color="white" />
           </div>
       </div>
