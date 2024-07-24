@@ -77,7 +77,7 @@ const ModalCarousel:React.FC<ModalCarouselProps> = ({
       open={galleryModal.isOpen}
       onClose={galleryModal.onClose}
     >
-      <div className="absolute left-4 top-4">
+      <div className="absolute z-50 left-4 top-4">
                     <IconButton onClick={() => galleryModal.onClose()} icon={<X size={15}/>}/>
                   </div>
       <div className="embla_modal">
