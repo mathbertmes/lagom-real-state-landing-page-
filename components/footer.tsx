@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <Container>
       <div className="w-full bg-[#ece5dd] ">
-        <div className="max-w-7xl mx-auto flex justify-between h-[30vh] items-center">
+        <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row justify-center gap-6 lg:justify-between h-[30vh] items-center">
           <div>
           <Link href="/">
             <img src={logo.src} alt="Logo" className="h-12 lg:h-16 w-auto cursor-pointer" />
@@ -18,8 +18,8 @@ const Footer = () => {
             <p>Email: mathbertemes@gmail.com</p>
           </div>
           <div>
-            <p>Instagram</p>
-            <p>Facebook</p>
+            <p className="cursor-pointer">Instagram</p>
+            <p className="cursor-pointer">Facebook</p>
           </div>
         </div>
       </div>
