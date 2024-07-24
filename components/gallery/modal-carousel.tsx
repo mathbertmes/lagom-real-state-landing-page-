@@ -90,7 +90,7 @@ const ModalCarousel:React.FC<ModalCarouselProps> = ({
                   }/image/upload/c_scale,w_${parseInt(image.height) < 2000 ? 1920 : 500}/${
                     image.public_id
                   }.${image.format}`}
-                  width={parseInt(image.height) < 2000 ? 1920 : 500}
+                  width={500}
                   height={420}
                   priority
                   alt="Next.js Conf image"
